@@ -1,0 +1,22 @@
+# AILSI — AI Liquidity Stress Index for TASI
+# Pinned-loosely; matches the course lab stack. Install: pip install -r requirements.txt
+
+# --- core data stack (used from Step 1 onward) ---
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+pyarrow>=14.0          # parquet caching
+yfinance>=0.2.40       # ^TASI and Saudi tickers
+
+# --- statistics & time series (Steps 4–5) ---
+statsmodels>=0.14      # ADF, ACF/PACF, ARIMA, OLS, structural breaks
+scipy>=1.10
+arch>=6.2              # GARCH(1,1) on TASI returns -> conditional vol / TAVIX / VaR
+
+# --- machine learning & explainability (Step 6) ---
+scikit-learn>=1.3      # logistic baseline, scaling, metrics, walk-forward splits
+xgboost>=2.0           # gradient-boosted stress classifier/forecaster
+shap>=0.44             # driver explanations
+
+# --- optional / stretch ---
+ruptures>=1.1          # change-point detection (structural breaks), optional
