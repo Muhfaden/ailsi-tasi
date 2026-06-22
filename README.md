@@ -18,7 +18,7 @@ almost mechanically. Layer oil-fiscal dynamics and post-2019 foreign-flow sensit
 TASI is a market whose stress is heavily *imported* yet unmonitored by any purpose-built,
 transparent, liquidity-aware gauge. AILSI fills that gap and proves the signal is worth acting on.
 
-## Build steps (one notebook, grown over commits)
+## Build steps 
 
 The whole project lives in `AILSI_TASI.ipynb`, built incrementally:
 
@@ -32,14 +32,6 @@ The whole project lives in `AILSI_TASI.ipynb`, built incrementally:
 |             | 6 | XGBoost (walk-forward CV + tuning), baselines, SHAP, calibration |
 |             | 7 | Overlay backtest (economic value), benchmark validation, dashboard |
 
-## How to run
-
-- **Google Colab (recommended):** open `AILSI_TASI.ipynb`, *Runtime → Run all*. It pulls live data
-  from FRED (no API key) and Yahoo Finance and caches it to `data/raw/`.
-- **Locally:** `pip install -r requirements.txt`, then run the notebook. Same live-first behaviour.
-- **Offline / CI:** if neither the network nor a cache is available, the notebook drops to a clearly
-  labelled **synthetic** dataset so the pipeline still executes end-to-end. Synthetic runs print a
-  loud warning and tag every artefact — never mistake them for real results.
 
 ## Repository layout
 
@@ -59,7 +51,6 @@ ailsi-tasi/
 - **FRED** (St. Louis Fed) — global macro/financial series, via the public CSV endpoint (no API key).
 - **Yahoo Finance** (`yfinance`) — `^TASI` and selected Saudi tickers.
 
-Data choices are deliberately flexible; each is justified on economic grounds in the notebook.
 
 ## Honest scope
 
